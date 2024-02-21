@@ -8,4 +8,5 @@ class HabibiDemoApplication
 
 fun main(args: Array<String>) {
 	runApplication<HabibiDemoApplication>(*args)
+	println("Hello world 2 !")
 }
