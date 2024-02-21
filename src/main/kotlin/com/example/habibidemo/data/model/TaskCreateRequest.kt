@@ -1,4 +1,4 @@
-package data.model
+package com.example.habibidemo.data.model
 
 import jakarta.annotation.Priority
 import jakarta.validation.constraints.NotBlank

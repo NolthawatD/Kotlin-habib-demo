@@ -1,6 +1,6 @@
-package data.model
+package com.example.habibidemo.data.model
 
-import data.Priority
+import com.example.habibidemo.data.Priority
 import java.time.LocalDateTime
 
 data class TaskDto(

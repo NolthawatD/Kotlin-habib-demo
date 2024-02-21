@@ -1,6 +1,6 @@
-package data
+package com.example.habibidemo.data
 
-import data.Priority
+import com.example.habibidemo.data.Priority
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
