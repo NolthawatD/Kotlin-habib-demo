@@ -1,5 +1,6 @@
 package data
 
+import data.Priority
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType
