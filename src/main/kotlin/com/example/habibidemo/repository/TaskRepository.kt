@@ -1,8 +1,8 @@
 package com.example.habibidemo.repository
 
+import com.example.habibidemo.data.Task
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Query
-import org.springframework.scheduling.config.Task
 import org.springframework.stereotype.Repository
 
 @Repository

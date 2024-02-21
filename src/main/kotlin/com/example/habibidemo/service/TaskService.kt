@@ -6,6 +6,7 @@ import com.example.habibidemo.data.model.TaskDto
 import com.example.habibidemo.exception.TaskNotFoundException
 import com.example.habibidemo.repository.TaskRepository
 import org.springframework.stereotype.Service
+import java.util.stream.Collectors
 
 
 @Service
@@ -33,5 +34,19 @@ class TaskService(private val repository: TaskRepository) {
         }
     }
 
+    fun getTaskById(id: Long): TaskDto {
+        checkTaskForId(id)
+        val task : Task = repository.findTaskById(id)
+        return mappingEntityToDto(task)
+    }
+
+    fun getAllTasks(): List<TaskDto> =
+        repository.findAll().stream().map(this::mappingEntityToDto).collect(Collectors.toList())
+
+    fun getAllOpenTasks(): List<TaskDto> =
+        repository.queryAllOpenTasks().stream().map(this::mappingEntityToDto).collect(Collectors.toList())
+
+    fun getAllClosedTasks(): List<TaskDto> =
+        repository.queryAllClosedTasks().stream().map(this::mappingEntityToDto).collect(Collectors.toList())
 
 }
