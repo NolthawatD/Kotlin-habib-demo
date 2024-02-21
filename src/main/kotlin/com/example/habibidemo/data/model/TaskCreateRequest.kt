@@ -1,6 +1,6 @@
 package com.example.habibidemo.data.model
 
-import jakarta.annotation.Priority
+import com.example.habibidemo.data.Priority
 import jakarta.validation.constraints.NotBlank
 import java.time.LocalDateTime
 
