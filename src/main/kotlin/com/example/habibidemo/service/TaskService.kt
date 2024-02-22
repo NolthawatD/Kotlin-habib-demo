@@ -68,6 +68,8 @@ class TaskService(private val repository: TaskRepository) {
         checkTaskForId(id)
         val existingTask: Task = repository.findTaskById(id)
 
+        println("existingTask === $existingTask")
+
         for (prop in TaskUpdateRequest::class.memberProperties) {
             if (prop.get(request) != null) {
                 val field: Field? = ReflectionUtils.findField(Task::class.java, prop.name)

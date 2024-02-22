@@ -36,16 +36,22 @@ class TaskController (private val service: TaskService){
     @PostMapping("create")
     fun createTask(
         @Valid @RequestBody request: TaskCreateRequest
-    ): ResponseEntity<TaskDto> = ResponseEntity(service.createTask(request), HttpStatus.OK)
+    ): ResponseEntity<TaskDto> {
+        return  ResponseEntity(service.createTask(request), HttpStatus.OK)
+    }
 
     @PatchMapping("update/{id}")
     fun updateTask(
         @PathVariable id: Long,
         @Valid @RequestBody request: TaskUpdateRequest
-    ): ResponseEntity<TaskDto> = ResponseEntity(service.updateTask(id, request), HttpStatus.OK)
+    ): ResponseEntity<TaskDto>
+    {
+        println("id === $id")
+        println("request === $request")
+        return ResponseEntity(service.updateTask(id, request), HttpStatus.OK)
+    }
 
     @DeleteMapping("delete/{id}")
     fun deleteTask(@PathVariable id: Long): ResponseEntity<String> =
         ResponseEntity(service.deleteTask(id), HttpStatus.OK)
-
 }

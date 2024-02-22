@@ -1,6 +1,6 @@
 package com.example.habibidemo.data.model
 
-import jakarta.annotation.Priority
+import com.example.habibidemo.data.Priority
 
 data class TaskUpdateRequest (
     val description: String?,
